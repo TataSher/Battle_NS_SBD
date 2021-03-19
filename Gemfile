@@ -18,4 +18,4 @@ end
   
 ruby "2.7.2"
 
-gem 'capybara'
+gem 'capybara', '~> 2.7', '>= 2.7.1'

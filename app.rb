@@ -7,13 +7,18 @@ class Battle < Sinatra::Base
 	set :sessions, true
 	set :session_secret, 'Snake'
 
+    before do
+	  @game = Game.current_game
+    end
+  
 	get '/' do
 		'Testing infrastructure working!'
 		erb :index
 	end
 
 	post '/names' do
-		$game = Game.new(params[:player_1], params[:player_2])
+		@game = Game.new_game(params[:player_1], params[:player_2])
+		
 		redirect to('/play')
 	end
 
@@ -22,8 +27,8 @@ class Battle < Sinatra::Base
 	end
 
   post '/attack' do
-    $game.attack($game.previous_player)
-    if $game.gameover?
+    @game.attack(@game.previous_player)
+    if @game.gameover?
       redirect '/gameover'
     else
       redirect '/attack'

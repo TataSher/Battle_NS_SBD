@@ -1,8 +1,8 @@
-<p> <%= $game.current_player.name  %> attacked <%= $game.previous_player.name %></p>
+<p> <%= @game.current_player.name  %> attacked <%= @game.previous_player.name %></p>
 
-<p><%= $game.previous_player.name %>: <%= $game.previous_player.hp %>HP</p>
+<p><%= @game.previous_player.name %>: <%= @game.previous_player.hp %>HP</p>
 
-<h1><%= $game.current_player.name %> Wins!</h1>
+<h1><%= @game.current_player.name %> Wins!</h1>
 
 <form action="/">
   <input type="submit" value="New Game">

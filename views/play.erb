@@ -1,11 +1,11 @@
-<h1><%= $game.current_player.name %> vs. <%= $game.previous_player.name %></h1>
+<h1><%= @game.current_player.name %> vs. <%= @game.previous_player.name %></h1>
 <div>
-<h2><%= $game.player1.name %>: <%= $game.player1.hp %>HP</h2>
+<h2><%= @game.player1.name %>: <%= @game.player1.hp %>HP</h2>
 </div>
 <div>
-<h2><%= $game.player2.name %>: <%= $game.player2.hp %>HP</h2>
+<h2><%= @game.player2.name %>: <%= @game.player2.hp %>HP</h2>
 </div>
-<h1><%= $game.current_player.name %>'s turn</h1>
+<h1><%= @game.current_player.name %>'s turn</h1>
 
 <form action="/attack" method='post'>
   <input type="submit" value="Attack">

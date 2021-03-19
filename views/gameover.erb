@@ -2,9 +2,8 @@
 
 <p><%= $game.previous_player.name %>: <%= $game.previous_player.hp %>HP</p>
 
+<h1><%= $game.current_player.name %> Wins!</h1>
 
-<% $game.switch_turn %>
-
-<form action="/play">
-  <input type="submit" value="Next Turn!">
+<form action="/">
+  <input type="submit" value="New Game">
 </form>

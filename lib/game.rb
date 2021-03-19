@@ -26,4 +26,7 @@ attr_reader :player1, :player2, :current_player, :previous_player
     end
   end
 
+  def gameover?
+    previous_player.hp == 0 ? true : false
+  end
 end 

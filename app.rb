@@ -21,9 +21,20 @@ class Battle < Sinatra::Base
 		erb :play
 	end
 
+  post '/attack' do
+    $game.attack($game.previous_player)
+    if $game.gameover?
+      redirect '/gameover'
+    else
+      redirect '/attack'
+    end
+  end
+
 	get '/attack' do
-	  $game.attack($game.previous_player)
 	  erb :attack
 	end
 
+  get '/gameover' do
+    erb :gameover
+  end
 end

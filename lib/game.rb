@@ -19,7 +19,7 @@ attr_reader :player1, :player2, :current_player, :previous_player
     else
       @current_player = @player1
     end
-    if @previous_player = @player2
+    if @previous_player == @player2
       @previous_player = @player1 
     else
       @previous_player = @player2
